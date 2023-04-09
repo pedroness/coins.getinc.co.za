@@ -33,5 +33,30 @@ services:
       - getinc-net
     depends_on:
       - db
+      
+  python_api:
+    image: python:3.10
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./dockers/pythons_api/app:/app
+    networks:
+      - getinc-net
+    depends_on:
+      - db
+    environment:
+      - PY_API_HOST=${PY_API_HOST}
+      - PY_WEB_HOST=${PY_WEB_HOST}
+      - PY_EMAIL_FROM=${PY_EMAIL_FROM}
+      - PY_EMAIL_USER=${PY_EMAIL_USER}
+      - PY_EMAIL_PASSWORD=${PY_EMAIL_PASSWORD}
+      - PY_EMAIL_HOST=${PY_EMAIL_HOST}
+      - PY_EMAIL_PORT=${PY_EMAIL_PORT}
+      - PY_DB_USER=${PY_DB_USER}
+      - PY_DB_PASSWORD=${PY_DB_PASSWORD}
+      - PY_DB_HOST=${PY_DB_HOST}
+      - PY_DB_PORT=${PY_DB_PORT}
+      - PY_DB_DATABASE=${PY_DB_DATABASE}
+    command: uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 
