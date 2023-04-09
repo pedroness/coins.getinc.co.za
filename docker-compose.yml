@@ -1,0 +1,37 @@
+version: '3.7'
+networks:
+  getinc-net:
+    name: ${DOCKER_NETWORK}
+    driver: bridge
+services:
+  db:
+    image: db
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    container_name: db
+    build:
+      context: ./dockers/db
+      target: db
+    ports:
+      - 5432:5432
+    networks:
+      - getinc-net
+    environment:
+      - TZ=GMT+2
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - PGDATA=/var/lib/postgresql/data/pgdata2
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+    networks:
+      - getinc-net
+    depends_on:
+      - db
+
+
