@@ -37,7 +37,7 @@ services:
   requirements:
     image: python:3.10
     volumes:
-      - ./dockers/pythons_api/app:/app
+      - ./dockers/python_api/app:/app
     command: pip install -r /app/requirements.txt
 
   python_api:
@@ -45,7 +45,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./dockers/pythons_api/app:/app
+      - ./dockers/python_api/app:/app
     networks:
       - getinc-net
     depends_on:
