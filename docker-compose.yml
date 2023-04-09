@@ -34,6 +34,12 @@ services:
     depends_on:
       - db
       
+  requirements:
+    image: python:3.10
+    volumes:
+      - ./dockers/pythons_api/app:/app
+    command: pip install -r /app/requirements.txt
+
   python_api:
     image: python:3.10
     ports:
@@ -44,6 +50,7 @@ services:
       - getinc-net
     depends_on:
       - db
+      - requirements
     environment:
       - PY_API_HOST=${PY_API_HOST}
       - PY_WEB_HOST=${PY_WEB_HOST}
