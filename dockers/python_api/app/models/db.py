@@ -8,9 +8,18 @@ from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 from models.seed import initialize_table
 
+from config import env
 
-password='az8N%40x2Q^M'
-DATABASE_URL = "postgresql+psycopg2://bulletqr:"+password+"@0.0.0.0/newdb"
+env_var = env().env
+
+
+
+
+# PY_DB_PORT=5432
+
+password = env_var["PY_DB_PASSWORD"].replace("@", "%40" )
+
+DATABASE_URL = "postgresql+psycopg2://"+env_var["PY_DB_USER"]+":"+password+"@"+env_var["PY_DB_HOST"]+"/"+env_var["PY_DB_DATABASE"]
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
