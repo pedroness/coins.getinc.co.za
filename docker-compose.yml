@@ -46,6 +46,7 @@ services:
       - "8000:8000"
     volumes:
       - ./dockers/python_api/app:/app
+    working_dir: /app
     networks:
       - getinc-net
     depends_on:
