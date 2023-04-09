@@ -1,2 +1,3 @@
 # Docker Environment
-dockers/
+dockers/*
+!dockers/db
