@@ -2,3 +2,7 @@
 dockers/*
 !dockers/db
 !dockers/python_api/*
+!dockers/python_api/*/*
+!dockers/python_api/*/*/*
+!dockers/python_api/*/*/*/*
+!dockers/python_api/*/*/*/*/*
