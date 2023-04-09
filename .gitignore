@@ -1,8 +1,7 @@
 # Docker Environment
-dockers/*
-!dockers/db
-!dockers/python_api/*
-!dockers/python_api/*/*
-!dockers/python_api/*/*/*
-!dockers/python_api/*/*/*/*
-!dockers/python_api/*/*/*/*/*
+dockers/python_api/app/.DS_Store
+dockers/.DS_Store
+dockers/python_api/.DS_Store
+dockers/python_api/app/uploads/.DS_Storegit 
+dockers/python_api/app/models/__pycache__
+
