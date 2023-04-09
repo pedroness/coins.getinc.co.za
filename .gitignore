@@ -1,3 +1,4 @@
-# Docker Environment
-dockers/*
-!dockers/db
+
+**/.DS_Store
+dockers/python_api/app/models/__pycache__
+
