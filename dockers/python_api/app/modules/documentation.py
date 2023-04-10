@@ -27,7 +27,7 @@ class FastDocs:
                 },
             },
         ]
-        self.title="Screentime XP Maximus"
+        self.title="Screentime XP Maximum Maximus"
         self.description="""
         Here you can earn screentime XP, transfer screentime XP and book your screentime slot 🚀
             """
