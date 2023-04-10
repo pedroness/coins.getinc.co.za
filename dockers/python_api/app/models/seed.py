@@ -105,7 +105,7 @@ INITIAL_DATA = {
             {
                 "first_name":"Kid3",
                 "last_name":"3",
-                "email":"kid1@beagenius.co.za",
+                "email":"kid3@beagenius.co.za",
                 "profile_upload_id":1,
                 "username":"kid3",
                 "disabled":False,
