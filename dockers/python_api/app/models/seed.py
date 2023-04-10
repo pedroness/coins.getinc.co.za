@@ -19,34 +19,28 @@ INITIAL_DATA = {
                   'id': 3,
                   "name": 'User', 
                   "permissions":{"routes": ["/users/me/"]}
+            },
+            {
+                  'id': 4,
+                  "name": 'Parent', 
+                  "permissions":{"routes": ["/users/me/", "/wallets/me/"]}
+            },
+            {
+                  'id': 5,
+                  "name": 'Kid', 
+                  "permissions":{"routes": ["/users/me/", "/wallets/me/"]}
             }
            
       ],
-      'wallets':[
-      {
-      "name":'XP',
-      "available":0,
-      "used":0,
-      "user_id":35
-      },
-      {
-      "name":'XP',
-      "available":0,
-      "used":0,
-      "user_id":34
-      },
-      {
-      "name":'XP',
-      "available":0,
-      "used":0,
-      "user_id":36
-      },
-      {
-      "name":'XP',
-      "available":4800000,
-      "used":0,
-      "user_id":33
-      }
+      'uploads': [
+    
+            {
+                "id":1,
+                "name":"default",
+                "path":"default",
+                "ext":"jpg"
+            }
+
       ],
       'users': [
     
@@ -77,19 +71,76 @@ INITIAL_DATA = {
                 "disabled":False,
                 "hashed_password": pwd_context.hash("password"),
                 "role_id": 3
+            },
+            {
+                "first_name":"Parent",
+                "last_name":"Bob",
+                "email":"parent@beagenius.co.za",
+                "profile_upload_id":1,
+                "username":"parent",
+                "disabled":False,
+                "hashed_password": pwd_context.hash("password"),
+                "role_id": 4
+            },
+            {
+                "first_name":"Kid1",
+                "last_name":"1",
+                "email":"kid1@beagenius.co.za",
+                "profile_upload_id":1,
+                "username":"kid1",
+                "disabled":False,
+                "hashed_password": pwd_context.hash("password"),
+                "role_id": 5
+            },
+            {
+                "first_name":"Kid2",
+                "last_name":"2",
+                "email":"kid2@beagenius.co.za",
+                "profile_upload_id":1,
+                "username":"kid1",
+                "disabled":False,
+                "hashed_password": pwd_context.hash("password"),
+                "role_id": 5
+            },
+            {
+                "first_name":"Kid3",
+                "last_name":"3",
+                "email":"kid1@beagenius.co.za",
+                "profile_upload_id":1,
+                "username":"kid3",
+                "disabled":False,
+                "hashed_password": pwd_context.hash("password"),
+                "role_id": 5
             }
 
       ],
-      'uploads': [
-    
-            {
-                "id":1,
-                "name":"default",
-                "path":"default",
-                "ext":"jpg"
-            }
-
+      'wallets':[
+      {
+      "name":'XP',
+      "available":0,
+      "used":0,
+      "user_id":7
+      },
+      {
+      "name":'XP',
+      "available":0,
+      "used":0,
+      "user_id":6
+      },
+      {
+      "name":'XP',
+      "available":0,
+      "used":0,
+      "user_id":5
+      },
+      {
+      "name":'XP',
+      "available":4800000,
+      "used":0,
+      "user_id":4
+      }
       ]
+      
 
 
 
