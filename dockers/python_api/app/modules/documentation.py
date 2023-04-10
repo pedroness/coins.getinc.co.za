@@ -27,15 +27,15 @@ class FastDocs:
                 },
             },
         ]
-        self.title="FastAPI Boiler Auth App"
+        self.title="Screentime XP Maximus"
         self.description="""
-        Launch Pad for awesome Projects 🚀
+        Here you can earn screentime XP, transfer screentime XP and book your screentime slot 🚀
             """
         self.version="0.0.1"
         self.terms_of_service="/docs/terms/"
         self.contact={
-        "name": "Torque Digital PTY(Ltd)",
-        "url": "http://torquedigital.co.za",
+        "name": "A Torque Digital Initiative",
+        "url": "http://www.torquedigital.co.za",
         "email": "developer@torquedigital.co.za",
         }
         self.license_info={
@@ -64,25 +64,6 @@ def route_doc(route_name):
 fd=FastDocs()
     
 app = FastAPI( title=fd.title,description=fd.description,version=fd.version,terms_of_service=fd.terms_of_service,contact=fd.contact,license_info=fd.license_info,openapi_tags=fd.tags_metadata, docs_url=None, redoc_url=None)
-
-# def custom_openapi():
-#     if app.openapi_schema:
-#         return app.openapi_schema
-#     openapi_schema = get_openapi(
-#         title=fd.title,
-#         version=fd.version,
-#         description=fd.description,
-#         routes=app.routes,
-        
-#     )
-    
-#     openapi_schema["info"]["x-logo"] = {
-#         "url": "/static/logo.png"
-#     }
-#     app.openapi_schema = openapi_schema
-#     return app.openapi_schema
-
-# app.openapi = custom_openapi
 
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
