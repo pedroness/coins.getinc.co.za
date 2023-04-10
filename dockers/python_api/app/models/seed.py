@@ -97,7 +97,7 @@ INITIAL_DATA = {
                 "last_name":"2",
                 "email":"kid2@beagenius.co.za",
                 "profile_upload_id":1,
-                "username":"kid1",
+                "username":"kid2",
                 "disabled":False,
                 "hashed_password": pwd_context.hash("password"),
                 "role_id": 5
