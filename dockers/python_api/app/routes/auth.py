@@ -20,6 +20,7 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
     """
     Form based token authentication
     """
+    print("what is the problem")
     # stuff to say ![This image works](https://upload.wikimedia.org/wikipedia/commons/0/08/STockholmspanorama_1928b.jpg)
     return ua.authenticate_user(form_data.username, form_data.password, db)
      

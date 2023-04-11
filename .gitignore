@@ -1,4 +1,6 @@
 
 **/.DS_Store
 dockers/python_api/app/models/__pycache__
+dockers/python_api/app/env.sh
+dockers/python_api/app/venv
 
