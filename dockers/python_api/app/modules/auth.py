@@ -17,7 +17,7 @@ env_var = env().env
 
 SECRET_KEY = "your-secret-key"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = 525960
 
 def set_scopes():
     scopes={}
