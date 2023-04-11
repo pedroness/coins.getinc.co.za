@@ -100,6 +100,7 @@ class UserAuth():
         return pwd_context.hash(password)
 
     def get_user(self,  username_or_email: str, db: Session=Depends(get_db)):
+        username_or_email=username_or_email.lower()
         user = db.query(UserDB).filter(or_(UserDB.email == username_or_email,UserDB.username == username_or_email)).first()
         if not user:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="No such user found")
@@ -116,7 +117,6 @@ class UserAuth():
         if not self.verify_password(password, user.hashed_password):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password")
         
-        print("we get here")
         access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
         access_token = create_access_token(
             data={"sub": user.email,"scopes":user.role.permissions['routes'] },
