@@ -17,7 +17,7 @@ env_var = env().env
 
 SECRET_KEY = "your-secret-key"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 525600
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 def set_scopes():
     scopes={}
@@ -40,7 +40,7 @@ def create_access_token( data: dict, expires_delta: timedelta | None = None):
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token-form-access",                                  
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token-form-access/",                                  
 scopes=set_scopes(),)
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
