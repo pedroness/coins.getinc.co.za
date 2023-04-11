@@ -108,6 +108,7 @@ class UserAuth():
 
 
     def authenticate_user(self,  username_or_email: str, password: str, db: Session=Depends(get_db)):
+        username_or_email=username_or_email.lower()
         user = db.query(UserDB).filter(or_(UserDB.email == username_or_email,UserDB.username == username_or_email)).first()
         if not user:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="No such user found")
@@ -132,6 +133,8 @@ class UserAuth():
     def create_user(self,user:UserCreate,db: Session=Depends(get_db)): 
         user_data = user.dict()
         user_data.pop("password")
+        user_data['email']=user_data['email'].lower()
+        user_data['username']=user_data['username'].lower()
         user_data['hashed_password'] = self.get_password_hash(user.password)
         db_user = UserDB(**user_data)
         try:
